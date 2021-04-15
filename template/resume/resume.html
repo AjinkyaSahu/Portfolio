@@ -1,0 +1,1077 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block active_resume_link %}
+active
+{% endblock %}
+
+
+{% block styles %}
+<style>
+    .resume_part_heading {
+        font-weight: 800;
+        font-size: 38px;
+        margin-bottom: 30px;
+        color: #3e64ff;
+        /*text-decoration: underline;*/
+    }
+
+    .services {
+        width: 100%;
+        margin-bottom: 60px;
+        transition: all 0.3s ease 0s;
+        padding: 30px;
+    }
+
+    .services .icon {
+        line-height: 1.3;
+        position: relative;
+        margin-top: -60px;
+        width: 80px;
+        height: 80px;
+        margin-bottom: 15px;
+        background: rgb(255 255 255);
+        border-radius: 50%;
+        transition: all 0.3s ease 0s;
+    }
+
+    /* .ftco-animate {
+    opacity: 0;
+    visibility: hidden;
+    } */
+    .services-1 {
+        text-decoration: none;
+        font-size: 1.3em;
+        border-radius: 5%;
+        transition: all 0.5s ease 0s;
+
+    }
+
+    .services-1:hover {
+        color: black;
+        text-decoration: none;
+        background-color: rgb(62, 100, 255);
+    }
+
+    .services-1 .icon {
+        display: block;
+        margin-bottom: 30px;
+        margin-top: .3em;
+    }
+
+    .services:hover,
+    .services:focus {
+        transition: all .4s ease-in 0s;
+        background: #92947a !important;
+        /* background: #b1b493!important; */
+        font-size: 1.15em;
+    }
+
+    .icon {
+        position: relative;
+    }
+
+    .services:hover .icon,
+    .services:focus .icon {
+        transition: all .85s ease 0s;
+        margin-left: 10%;
+        margin-bottom: 30px;
+    }
+
+    .education-card {
+        transition: all .32s ease-out 0s;
+        background: #2cbfaa;
+    }
+
+    .education-card:hover,
+    .education-card:focus {
+        font-size: 1.2em !important;
+        background-color: #3dccb7;
+        font-weight: 300;
+    }
+
+    .education-card:hover .namee,
+    .education-card:focus .namee {
+        font-size: 1.2em !important;
+        /* background-color: #2cbfaa; */
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+        text-decoration: rgb(150, 139, 139) underline;
+        padding-bottom: 5px;
+        ;
+    }
+
+    .education-card:hover h5,
+    .education-card:focus h5 {
+        font-size: 1.2em !important;
+        /* background-color: #2cbfaa; */
+        font-weight: 400;
+        padding-left: 20%;
+    }
+
+    @media (min-width:992px) {
+        .side-nav {
+            margin-left: 2%;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .side-nav {
+            position: relative;
+            width: 75%;
+            padding-left: 15%;
+            height: fit-content;
+            align: center;
+            margin-top: 0px;
+        }
+
+        .display {
+            margin: auto%;
+            width: 90%;
+        }
+    }
+
+    .education-card:hover .namee,
+    .education-card:focus .namee {
+        font-size: 1.2em !important;
+        /* background-color: #2cbfaa; */
+        font-weight: 400;
+        color: rgb(0, 0, 0);
+        text-decoration: rgb(150, 139, 139) underline;
+        padding-bottom: 5px;
+        ;
+    }
+
+    .education-card:hover h5,
+    .education-card:focus h5 {
+        font-size: 1.2em !important;
+        /* background-color: #2cbfaa; */
+        font-weight: 200;
+        padding-left: 10%;
+    }
+
+    .resume_part_active {
+        transition: all 3s ease-in;
+        width: 100% !important;
+        background: #0563bb !important;
+        color: white !important;
+    }
+</style>
+{% endblock styles %}
+
+
+{% block body %}
+<style>
+    @media (min-width: 992px) {
+        #base-container {
+            padding-left: 100px;
+        }
+    }
+    .side-nav .nav-menu li a{
+        font-size:1.12rem;
+    }
+</style>
+<script>
+    element = document.getElementsByTagName("body")[0];
+    element.setAttribute("data-spy", "scroll");
+    //element.setAttribute("data-target","#resume-items");
+    element.setAttribute("data-offset", "0");
+    element.setAttribute("tabindex", "0");
+        //element.setAttribute("style","background-color:orange;");
+</script>
+
+<div class="side-nav d-flex flex-column justify-content-center rounded">
+    <ul class="nav-menu" style="width: 100px;min-width:fit-content;">
+        <li type="none"><a id="eduacationLink" class="link resume_part_active" href="#educationPart">Education</a></li>
+        <li type="none"><a id="skillsLink" class="link" href="#skills">Skills</a></li>
+        <li type="none"><a id="worksLink" class="link" href="#works">Works</a></li>
+        <li type="none"><a id="organizationsLink" class="link" href="#organizations">Organizations</a></li>
+        <li type="none"><a id="certificationsLink" class="link" href="#certifications">Certifications</a></li>
+    </ul>
+</div>
+<div class="display">
+    <div id="educationPart" class="container py-5">
+        <h2 class='pb-2 border-bottom resume_part_heading'> Education </h2>
+        <div class="row my-5">
+            <div class="card border rounded shadow  education-card">
+                <h5 class="border-bottom p-3"> Bachelor of Engineering in Computer Science </h5>
+                <div class="card-body">
+                    <h5 class="card-title namee">PVG's College Of Engineering and Technology, Pune </h5>
+                    <h6 class="card-title"><b>- </b> Savitribai Phule Pune University</h6>
+                    <div class="row">
+                        <div class="col-8">2019-2020</div>
+                        <div class="col-4 justify-content-end">Scored 8.67 SGPA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="card border rounded shadow-lg education-card">
+                <h5 class="border-bottom p-3">11th-12th Higher Secondary Certificate</h5>
+                <div class="card-body">
+                    <h5 class="card-title namee">Shri Chaitanya Jr. College, Hyderabad</h5>
+                    <h6 class="card-title"><b>- </b> Telangana State Board of Education</h6>
+                    <div class="row">
+                        <div class="col-8">2017-2019</div>
+                        <div class="col-4 justify-content-end">Scored 97%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-5">
+            <div class="card border rounded shadow-lg education-card">
+                <h5 class="border-bottom p-3 ">10th Standard Secondary Certificate</h5>
+                <div class="card-body">
+                    <h5 class="card-title namee">St. Francis High Secondary School, Sarni</h5>
+                    <h6 class="card-title"><b>-</b> Central Board of Secondary Education</h6>
+                    <div class="row">
+                        <div class="col-8">2016-2017</div>
+                        <div class="col-4 justify-content-end">Scored 10 CGPA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="skills" class="container py-5 ">
+        <h2 class="pb-2 border-bottom resume_part_heading">Skills</h2>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col-md-6 text-center d-flex">
+                <a href="#" class="services-1 shadow w-100">
+                    <span class="icon">
+                        <img src="{% static 'images/languages_icon.png' %}" width="75px"
+                            class="image pt-2 rounded-circle" height="75px" />
+                    </span>
+                    <div class="desc">
+                        <h2 class="mb-3 border-top border-bottom p-3">Languages</h2>
+
+                        <p>
+                            Python <br> C++ <br> Java <br> Lua
+                            <!-- <ul class="list-group list-group-numbered">
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                  <div class="ms-2 me-auto">
+                                    <div class="fw-bold">Python</div>
+                                  </div>
+                                  <span class="badge bg-primary rounded-pill">4*</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                  <div class="ms-2 me-auto">
+                                    <div class="fw-bold">C++</div>
+                                  </div>
+                                  <span class="badge bg-primary rounded-pill">14</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                  <div class="ms-2 me-auto">
+                                    <div class="fw-bold">Java</div>
+                                  </div>
+                                  <span class="badge bg-primary rounded-pill">14</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                      <div class="fw-bold">Lua</div>
+                                    </div>
+                                    <span class="badge bg-primary rounded-pill">14</span>
+                                  </li>
+                            </ul> -->
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 text-center d-flex">
+                <a href="#" class="services-1 shadow w-100">
+                    <span class="icon">
+                        <img src="{% static 'images/web_icon.png' %}" width="75px" class="image pt-2 rounded-circle"
+                            height="75px" />
+                    </span>
+                    <div class="desc">
+                        <h2 class="mb-3 border-top border-bottom p-3">Web Technology</h2>
+                        <p>
+                            HTML
+                            <br>
+                            CSS
+                            <br>
+                            JavaScript
+                            <br>
+                            TypeScript
+                            <br>
+                            Django
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row g-5 py-3 row-cols-1 row-cols-md-2">
+            <div class="col-md-6 text-center d-flex">
+                <a href="#" class="services-1 shadow w-100">
+                    <span class="icon">
+                        <img src="{% static 'images/data_icon.png' %}" width="75px" class="image pt-3 rounded-circle"
+                            height="75px" />
+                    </span>
+                    <div class="desc">
+                        <h2 class="mb-3 border-top border-bottom p-3">Data Engineering</h2>
+                        <p>
+                            SQL
+                            <br>
+                            Data Analysis
+                            <br>
+                            Data Visualization
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 text-center d-flex">
+                <a href="#" class="services-1 shadow w-100">
+                    <span class="icon">
+                        <img src="{% static 'images/lib_icon.jpg' %}" width="75px" class="image pt-3 rounded-circle"
+                            height="75px" />
+                    </span>
+                    <div class="desc">
+                        <h2 class="mb-3 border-top border-bottom p-3">Libraries</h2>
+                        <p>
+                            OpenCv
+                            <br>
+                            Bootstrap
+                            <br>
+                            Flask
+                            <br>
+                            Numpy
+                            <br>
+                            Pandas
+                            <br>
+                            MatplotLib
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row g-5 py-3 .row-cols-md-2">
+            <div class="col-md-6 text-center d-flex">
+                <a href="#" class="services-1 shadow w-100">
+                    <span class="icon">
+                        <img src="{% static 'images/tools_icon.png' %}" width="75px" class="image pt-3 rounded-circle"
+                            height="75px" />
+                    </span>
+                    <div class="desc">
+                        <h2 class="mb-3 border-top border-bottom p-3">Software Tools</h2>
+                        <p>
+                            Git
+                            <br>
+                            Visual Studio Code
+                            <br>
+                            Jupytor Notebook
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 text-center d-flex">
+                <a href="#" class="services-1 shadow w-100">
+                    <span class="icon">
+                        <img src="{% static 'images/technology_icon.png' %}" width="75px"
+                            class="image pt-3 rounded-circle" height="75px" />
+                    </span>
+                    <div class="desc">
+                        <h2 class="mb-3 border-top border-bottom p-3">Other Technology</h2>
+                        <p>
+                            Arduino
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="works" class="container py-5">
+        <h2 class='resume_part_heading pb-2 border-bottom'>Works</h2>
+        <!-- Vlabs IIT Bombay -->
+        <div class="row mt-5">
+            <div class="media block-6 services d-block bg-white rounded-lg shadow rounded-lg">
+                <div class="icon d-flex align-items-center justify-content-center border rounded-circle">
+                    <img src="{% static 'images/vlab.png' %}" alt="Vlabs IIT-B" width="77px"
+                        class="border rounded-circle">
+                </div>
+                <div class="media-body">
+                    <h3 class="heading" style="font-weight: 800;">Web Developer</h3>
+                    <h4 class="heading">VLABS IIT-Bombay</h4>
+                    <h6>Jan 2020 - Present</h6>
+                    <hr style="height: 3px;background-color: rgb(207, 188, 224);border-radius: 10%;width: 80%;">
+                    <div class="container">
+                        <p class="ml-5">
+                        <ul>
+                            <li>Contributed in creating different Virtual Labs.</li>
+                            <li>Developed some experiment of Heat Transfer Lab and Chemistry Lab.</li>
+                            <li>Developer of Integrated Circuit Analysis Lab.</li>
+                            <li>Some links of virtual lab experiment completed by me are</li>
+                            <li>https://9-ppt-titr-volhars-exp.vlabs.co.in/</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="media block-6 services d-block bg-white rounded-lg shadow rounded-lg">
+                <div class="icon d-flex align-items-center justify-content-center border rounded-circle">
+                    <img src="{% static 'images/sangrah.png' %}" alt="Vlabs IIT-B" width="77px"
+                        class="border rounded-circle">
+                </div>
+                <div class="media-body">
+                    <h3 class="heading" style="font-weight: 800;">Developer</h3>
+                    <h4 class="heading">Sangrah Innovations</h4>
+                    <h6>Oct 2020 - Nov 2020</h6>
+                    <hr style="height: 3px;background-color: rgb(207, 188, 224);border-radius: 10%;width: 80%;">
+                    <div class="container">
+                        <p class="ml-5">
+                        <ul>
+                            <li>Developed course content for Python Language.</li>
+                            <li>Designed the course curriculum for the coding venture.</li>
+                            <li>Worked as UI/UX developer for their website for the venture.</li>
+                            <li>Led a team of two developers to make the website for the venture.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="media block-6 services d-block bg-white rounded-lg shadow rounded-lg">
+                <div class="icon d-flex align-items-center justify-content-center border rounded-circle">
+                    <img src="{% static 'images/letsupgrade.png' %}" alt="Vlabs IIT-B" width="77px"
+                        class="border rounded-circle">
+                </div>
+                <div class="media-body">
+
+                    <h3 class="heading" style="font-weight: 800;">Student Ambassador</h3>
+                    <h4 class="heading">Lets Upgrade</h4>
+                    <h6>Nov 2020 - Jan 2020</h6>
+
+                    <hr style="height: 3px;background-color: rgb(207, 188, 224);border-radius: 10%;width: 80%;">
+                    <div class="container">
+                        <p class="ml-5">
+                        <ul>
+                            <li>It was an amazing journey with all community members, trainers and mentors.</li>
+                            <li>This Internship helped me lot, such as building connections, improved communication
+                                skills, pushed me to take leadership, solving end to end problems, creating good and
+                                engaging content.</li>
+                            <li>It was a wonderful experience, learnt a lot from this program like
+                                #30minsseries,inustrial connect etc. Delivered talks in #30minseries on various topic.
+                            </li>
+                            <li>I participated in many informative workshops in almost every field called #30minseries
+                                happened every week, wrote blogs about trending tech topics ,participated in coding and
+                                tech activities , also in the last month of intership I organized and participated in
+                                tech events held in their Online tech fest.</li>
+                            <li>This intership also boost up my knowledge rearding various tech domain through their
+                                sessions by various technical experts.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="organizations" class="container py-5">
+        <h2 class='pb-2 border-bottom resume_part_heading'> Organizations </h2>
+        <div class="row progress-circle mb-5">
+            <div class="col-lg-6 mb-4" style="height: 100%;">
+                <div class=" rounded-lg shadow p-4">
+                    <h2 class="h3 font-weight-bold text-center mb-4 mt-3">Google's Developer Student Club</h2>
+                    <div class="mx-auto">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center p-3">
+                            <img src="{% static 'images/dsc.png' %}" alt="DSC" width="150px" height="130px"
+                                style="background-color:rgb(245 245 245);border-radius: 30%;">
+                        </div>
+                    </div>
+                    <div class="h3 mb-1 align-items-center text-center p-2">Event Organizer</div>
+                    <div class="row text-center mt-4">
+                        <div class="col-6 border-right">
+                            <div class="h4 font-weight-bold mb-0 align-items-center">June 2020</div>
+                        </div>
+                        <div class="col-6">
+                            <div class="h4 font-weight-bold mb-0 align-items-center">Present</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class=" rounded-lg shadow p-4">
+                    <h2 class="h3 font-weight-bold text-center mb-4 mt-2">VLABS IIT-Bombay</h2>
+                    <div class="mx-auto my-3">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center p-3">
+                            <img src="{% static 'images/vlab.png' %}" alt="vlab" width="120px" height="120px"
+                                style="background-color:rgb(245 245 245);border-radius: 30%;">
+                        </div>
+                    </div>
+                    <div class="h3 mb-0 align-items-center text-center p-2 my-4">Virtual Lab developer</div>
+                    <div class="row text-center mt-4">
+                        <div class="col-6 border-right">
+                            <div class="h4 font-weight-bold mb-0 align-items-center">April 2020</div>
+                        </div>
+                        <div class="col-6">
+                            <div class="h4 font-weight-bold mb-0 align-items-center">Present</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row progress-circle mb-5">
+            <div class="col-lg-6 mb-4">
+                <div class=" rounded-lg shadow p-4">
+                    <h2 class="h3 font-weight-bold text-center mb-4">Associate of Computer Engineering Students (ACES)
+                    </h2>
+                    <div class="mx-auto">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center p-3">
+                            <img src="{% static 'images/aces.png' %}" alt="ACES" width="120px" height="120px"
+                                style="background-color:rgb(245 245 245);border-radius: 30%;">
+                        </div>
+                    </div>
+                    <div class="h4 mb-0 align-items-center text-center">Member of Technical Team</div>
+                    <div class="row text-center mt-4">
+                        <div class="col-6 border-right">
+                            <div class="h4 font-weight-bold mb-0 align-items-center">June 2020</div>
+                        </div>
+                        <div class="col-6">
+                            <div class="h4 font-weight-bold mb-0 align-items-center">Present</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class=" rounded-lg shadow p-4">
+                    <h2 class="h3 font-weight-bold text-center mb-4">Vlabs Digitizers Forum <br> PVG's COET</h2>
+                    <div class="mx-auto">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center p-3">
+                            <img src="{% static 'images/vlabs.png' %}" alt="VLAB" width="140px" height="120px"
+                                style="background-color:rgb(245 245 245);border-radius: 30%;">
+                        </div>
+                    </div>
+                    <div class="h3 mb-0 align-items-center text-center">Students Coordinator and Mentor</div>
+                    <div class="row text-center mt-4">
+                        <div class="col-6 border-right">
+                            <div class="h4 font-weight-bold mb-0 align-items-center">Jan 2020</div>
+                        </div>
+                        <div class="col-6">
+                            <div class="h4 font-weight-bold mb-0 align-items-center">Present</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="certifications" class="container py-5">
+        <h2 class='resume_part_heading border-bottom pb-2'> Certifications </h2>
+        <div class="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-1 align-items-stretch">
+            <div class="col py-3">
+
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="border-radius:30px;background-image: url('{% static 'images/CertificateImages/intro_to_ds_specialization.jpg' %}');background-blend-mode:multiply;">
+                    {% comment %} background-blend-mode:multiply , color-burn, overlay, soft-light {% endcomment %}
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            Introduction To Data Science Specialization
+                        </h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{% static 'images/ibm.svg' %}" alt="IBM" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>IBM</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Specialization</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col py-3">
+
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="border-radius:30px;background-image: url('{% static 'images/CertificateImages/bootathon_mentor.jpg' %}');background-blend-mode:multiply;">
+                    {% comment %} background-blend-mode:multiply , color-burn, overlay, soft-light {% endcomment %}
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            Bootathon Mentor Certificate
+                        </h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{% static 'images/vlab.png' %}" alt="vlab" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>IIT-B</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Mentorship</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col py-3">
+
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="border-radius:30px;background-image: url('{% static 'images/CertificateImages/python_crash_course.jpg' %}');background-blend-mode:multiply;">
+                    {% comment %} background-blend-mode:multiply , color-burn, overlay, soft-light {% endcomment %}
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            Python Crash Course
+                        </h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{% static 'images/google.png' %}" alt="google" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Google</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Course</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col py-3">
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="border-radius:30px;background-image: url('{% static 'images/CertificateImages/html_css_js.jpg' %}');background-blend-mode:multiply;">
+                    {% comment %} background-blend-mode:multiply , color-burn, overlay, soft-light {% endcomment %}
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            HTML, CSS, JavaScript for web developer
+                        </h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{% static 'images/johnhopkins.png' %}" alt="john hopkins" width="32"
+                                    height="32" class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>John Hopkins</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Course</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col py-3">
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="border-radius:30px;background-image: url('{% static 'images/CertificateImages/responsive_designing.jpg' %}');background-blend-mode:multiply;">
+                    {% comment %} background-blend-mode:multiply , color-burn, overlay, soft-light {% endcomment %}
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            Advance Styling with Responsive Designing
+                        </h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{% static 'images/michigan.jpeg' %}" alt="Michigan University" width="32"
+                                    height="32" class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Michigan University</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Course</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col py-3">
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="border-radius:30px;background-image: url('{% static 'images/CertificateImages/programming_fundamentals.jpg' %}');background-blend-mode:multiply;">
+                    {% comment %} background-blend-mode:multiply , color-burn, overlay, soft-light {% endcomment %}
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            Programming Fundamentals
+                        </h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{% static 'images/michigan.jpeg' %}" alt="vlab" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Michigan University</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Course</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col py-3">
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="border-radius:30px;background-image: url('{% static 'images/CertificateImages/what_is_ds.jpg' %}');background-blend-mode:multiply;">
+                    {% comment %} background-blend-mode:multiply , color-burn, overlay, soft-light {% endcomment %}
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            What is Data Science
+                        </h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{% static 'images/ibm.svg' %}" alt="IBM" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>IBM</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Course</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col py-3">
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="border-radius:30px;background-image: url('{% static 'images/CertificateImages/tools_for_ds.jpg' %}');background-blend-mode:multiply;">
+                    {% comment %} background-blend-mode:multiply , color-burn, overlay, soft-light {% endcomment %}
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            Tools for Data Science
+                        </h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{% static 'images/ibm.svg' %}" alt="IBM" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>IBM</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Course</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col py-3">
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="border-radius:30px;background-image: url('{% static 'images/CertificateImages/ds_methodology.jpg' %}');background-blend-mode:multiply;">
+                    {% comment %} background-blend-mode:multiply , color-burn, overlay, soft-light {% endcomment %}
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            Data Science Methodology
+                        </h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{% static 'images/ibm.svg' %}" alt="IBM" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>IBM</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Course</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col py-3">
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="border-radius:30px;background-image: url('{% static 'images/CertificateImages/database_for_ds.jpg' %}');background-blend-mode:multiply;">
+                    {% comment %} background-blend-mode:multiply , color-burn, overlay, soft-light {% endcomment %}
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            Database and SQL for Data Science
+                        </h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{% static 'images/ibm.svg' %}" alt="IBM" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>IBM</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Course</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col py-3">
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="border-radius:30px;background-image: url('{% static 'images/CertificateImages/data_analysis.jpg' %}');background-blend-mode:multiply;">
+                    {% comment %} background-blend-mode:multiply , color-burn, overlay, soft-light {% endcomment %}
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            Data Analysization With Python
+                        </h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{% static 'images/ibm.svg' %}" alt="IBM" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>IBM</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Course</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col py-3">
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="border-radius:30px;background-image: url('{% static 'images/CertificateImages/data_visualization.jpg' %}');background-blend-mode:multiply;">
+                    {% comment %} background-blend-mode:multiply , color-burn, overlay, soft-light {% endcomment %}
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            Data Visualization With Python
+                        </h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{% static 'images/ibm.svg' %}" alt="IBM" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>IBM</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Course</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col py-3">
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="border-radius:30px;background-image: url('{% static 'images/CertificateImages/iot.jpg' %}');background-blend-mode:multiply;">
+                    {% comment %} background-blend-mode:multiply , color-burn, overlay, soft-light {% endcomment %}
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            Introduction To Internet Of Things
+                        </h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{% static 'images/uci.png' %}" alt="UCI" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>University of Canada</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Course</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col py-3">
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="border-radius:30px;background-image: url('{% static 'images/CertificateImages/intro_to_arduino.jpg' %}');background-blend-mode:multiply;">
+                    {% comment %} background-blend-mode:multiply , color-burn, overlay, soft-light {% endcomment %}
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            Introduction To Arduino
+                        </h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{% static 'images/uci.png' %}" alt="UCI" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>University of Canada</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Course</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col py-3">
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="border-radius:30px;background-image: url('{% static 'images/CertificateImages/angular.jpg' %}');background-blend-mode:multiply;">
+                    {% comment %} background-blend-mode:multiply , color-burn, overlay, soft-light {% endcomment %}
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            Introduction To Angular: Frontend Web Framwork
+                        </h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{% static 'images/hku.png' %}" alt="HKU" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Hong Kong University</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Course</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col py-3">
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="border-radius:30px;background-image: url('{% static 'images/CertificateImages/web_scraping.jpg' %}');background-blend-mode:multiply;">
+                    {% comment %} background-blend-mode:multiply , color-burn, overlay, soft-light {% endcomment %}
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            Using Python to Access Web Data
+                        </h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{% static 'images/michigan.jpeg' %}" alt="IBM" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Michigan university</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Course</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col py-3">
+                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                    style="border-radius:30px;background-image: url('{% static 'images/CertificateImages/web_scraping.jpg' %}');background-blend-mode:multiply;">
+                    {% comment %} background-blend-mode:multiply , color-burn, overlay, soft-light {% endcomment %}
+                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                        <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                            Pandas Python Library
+                        </h2>
+                        <ul class="d-flex list-unstyled mt-auto">
+                            <li class="me-auto">
+                                <img src="{% static 'images/coursera.png' %}" alt="IBM" width="32" height="32"
+                                    class="rounded-circle border border-white">
+                            </li>
+                            <li class="d-flex align-items-center me-3">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Coursera</small>
+                            </li>
+                            <li class="d-flex align-items-center">
+                                <svg class="bi me-2" width="1em" height="1em"></svg>
+                                <small>Project Work</small>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    let dispay = document.querySelector(".display");
+
+    let focussed = document.activeElement;
+    console.log(focussed);
+
+    let education = document.getElementById("educationPart");
+    let skills = document.getElementById("skills")
+    let works = document.getElementById("works")
+    let organizations = document.getElementById("organizations")
+    let certifications = document.getElementById("certifications")
+
+    let educationLink = document.getElementById("eduacationLink")
+    let worksLink = document.getElementById("worksLink")
+    let organizationsLink = document.getElementById("organizationsLink")
+    let skillsLink = document.getElementById("skillsLink")
+    let certificationsLink = document.getElementById("certificationsLink")
+
+    let totalHeight = window.innerHeight / 2
+    let resume_part_active = educationLink
+    document.querySelector(".active_education_link").classList.add("active");
+    document.addEventListener("scroll", (e) => {
+        if (education.getBoundingClientRect().y >= 0 && education.getBoundingClientRect().y < (totalHeight)) {
+            resume_part_active.classList.remove("resume_part_active");
+            educationLink.classList.add("resume_part_active");
+
+            resume_part_active = educationLink
+        } else if (skills.getBoundingClientRect().y >= 0 && skills.getBoundingClientRect().y < (totalHeight)) {
+            resume_part_active.classList.remove("resume_part_active")
+            skillsLink.classList.add("resume_part_active")
+            resume_part_active = skillsLink
+            document.querySelector(".active_education_link").classList.remove("active");
+        } else if (works.getBoundingClientRect().y >= 0 && works.getBoundingClientRect().y < (totalHeight)) {
+            resume_part_active.classList.remove("resume_part_active")
+            worksLink.classList.add("resume_part_active")
+            resume_part_active = worksLink
+            document.querySelector(".active_education_link").classList.remove("active");
+        }
+        else if (organizations.getBoundingClientRect().y >= 0 && organizations.getBoundingClientRect().y < (totalHeight)) {
+            resume_part_active.classList.remove("resume_part_active")
+            organizationsLink.classList.add("resume_part_active")
+            resume_part_active = organizationsLink
+            document.querySelector(".active_education_link").classList.remove("active");
+        }
+        // organizations.getBoundingClientRect().y >= 0 && 
+        else if (certifications.getBoundingClientRect().y < (totalHeight)) {
+            resume_part_active.classList.remove("resume_part_active")
+            certificationsLink.classList.add("resume_part_active")
+            resume_part_active = certificationsLink
+            document.querySelector(".active_education_link").classList.remove("active");
+        }
+    })
+</script>
+
+{% endblock body %}

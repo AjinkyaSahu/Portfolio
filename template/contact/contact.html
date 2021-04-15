@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block active_contact_link %}
+    active
+{% endblock %}
+
+{% block body %}
+    
+    <section id="contact" style="background:rgb(15 154 141 / 71%)">
+        <div class="container">
+            <div class="row text-center" style="font-size: 48px;display: block;color: #000a2d;font-weight: 600;font-family:rufina,serif;margin-bottom: 40px;">
+                <div class="card text-dark mb-3 shadow-lg p-3 mb-5 bg-body rounded" style="background-color:#60b9b0;box-shadow: #6fccc3 7px 10px 12px!important;">
+                    {% comment %} <div class="card-header">Header</div> {% endcomment %}
+                    <div class="card-body">
+                        If Not Now, When?
+                        <br/>
+                        Let’s Work Together!   
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="col-md-6 offset-md-3 ">
+                <blockquote class="blockquote text-center">
+                    <h1 Class="text-center bg-gradient-success"  style="font-family:rufina,serif;">Contact Me</h1>
+                    <footer class="text-center text-muted">Want to work on Some Project or have idea for any project feel free to connect with me.</footer>
+                </blockquote>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-7" id="contact_form">
+                    <form class="message-form border border-dark">
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <!-- <label for="validationDefault01">First name</label> -->
+                                <input type="text" class="form-control" id="validationDefault01" Placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <!-- <label for="validationDefault02">Last name</label> -->
+                                <input type="text" class="form-control" id="validationDefault02" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                                <!-- <label for="validationDefault03">City</label> -->
+                                <input type="text" class="form-control" id="validationDefault03" placeholder="Subject" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                                <!-- <label for="validationDefault03">City</label> -->
+                                <textarea class="form-control" id="validationDefault03" placeholder="Your Message....." required style="height:200px;min-height:190px;max-height:500px"></textarea>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-lg rounded-pill border-primary" type="submit">Send</button>
+                    </form>
+                </div>
+                <div class="col-md-4 justify-content-center align-self-center" style="height:100%">
+                    <div class="row" style="position:relative;height:25%;">
+                        <div class="col-4 icon justify-content-center align-items-center text-center">
+                            <i class='bx bx-home' style="font-size: 1.8em;background-color: grey;border-radius: 50%;margin: 10px;padding:10px;"></i>
+                            <!-- <span class="fa fa-map-marker"></span> -->
+                            {% comment %} <i class="fa fa-home" style="font-size: 1.8em;background-color: grey;border-radius: 50%;margin: 10px;padding:10px;" aria-hidden="true"></i> {% endcomment %}
+                        </div>
+                        <div class="text col-8 align-self-center align-items-center">
+                            <p><span>Address:</span>
+                                <br>137/k, Ward no. 1,
+                                <br> Near N.S.B. College, Patakheda
+                                <br>Sarni, M.P. 460447</p>
+                        </div>
+                    </div>
+                    <div class="row" style="position:relative;height:25%;">
+                        <div class="icon col-4 align-items-center justify-content-center text-center">
+                            <i class='bx bx-phone-call' style="font-size: 1.8em;background-color: grey;border-radius: 50%;margin: 10px;padding:10px;"></i>
+                            {% comment %} <span class="fa fa-phone" style="font-size: 1.8em;background-color: grey;border-radius: 50%;margin: 10px;padding:10px;"></span> {% endcomment %}
+                        </div>
+                        <div class="text col-8 align-self-center align-items-center">
+                            <p><span>Phone:</span> <br> <a href="tel://8770482857">+91 8770482857</a></p>
+                        </div>
+                    </div>
+                    <div class="row" style="position:relative;height:25%;">
+                        <div class="icon col-4 align-items-center justify-content-center text-center">
+                            <i class='bx bx-mail-send'  style="font-size: 1.8em;background-color: grey;border-radius: 50%;margin: 10px;padding:10px;"></i>
+                            {% comment %} <span class="fa fa-paper-plane" style="font-size: 1.8em;background-color: grey;border-radius: 50%;margin: 10px;padding:10px;"></span> {% endcomment %}
+                        </div>
+                        <div class="text col-8 align-self-center align-items-center">
+                            <p><span>Email:</span> <br> <a href="mailto:info@yoursite.com">ajinksahu11@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="row" style="position:relative;height:25%;">
+                        <div class="icon col-4 align-items-center justify-content-center text-center">
+                            <i class='bx bx-world'  style="font-size: 1.8em;background-color: grey;border-radius: 50%;margin: 10px;padding:10px;"></i>
+                            {% comment %} <span class="fa fa-globe" style="font-size: 1.8em;background-color: grey;border-radius: 50%;margin: 10px;padding:10px;"></span> {% endcomment %}
+                        </div>
+                        <div class="text col-8 align-self-center align-items-center">
+                            <p><span>Website:</span> <br> <a href="#home">yoursite.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+    
+{% endblock body %}
+

@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+
+{% block active_about_link %}
+    active
+{% endblock %}
+
+{% load static %}
+
+{% block body %}
+    <style>
+        body{
+            background-color:#e5f4f3;
+        }
+        .divider{
+            height: 2rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+        
+        #me4{
+            width:420px;
+        }
+        #me2{
+            position:relative;
+            width:100%;
+            height:100%;
+        }
+        @media (min-width:515px) and (max-width:991px){
+            #me4{
+                width:720px;
+            }
+            #me2{
+                width:60%;
+                margin: 0px auto;
+            }
+            
+        }
+        @media (max-width:515px){
+            #me4{
+                width:300px;
+            }
+            #me2{
+                width:60%;
+                margin: 0px auto;
+            }
+        } 
+    </style>
+    <div class="container my-2">
+        <div class="row p-2 pb-0 pe-lg-0 pt-lg-3 align-items-center">
+            <div class="col-lg-8 p-3 p-lg-3 pt-lg-3">
+                <h1 class="text-center">About Me</h1>
+                <div class="card-body">
+                    <p >
+                        Home town is in beautiful ranges of Satpura.I am a person of <br>small town with lots of big dream.
+                    </p>
+                    <form style="margin:5% 0%;">
+                        <div class="form-row">
+                            <div class="col">
+                                <!-- <input type="text" class="form-control" placeholder="First name"> -->
+                                <p>Name</p>
+                            </div>
+                            <div class="col">
+                                <!-- <input type="text" class="form-control" placeholder="Last name"> -->
+                                <p>Ajinkya Sahu</p>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                Address
+                            </div>
+                            <div class="col">
+                                <Address>137/k, ward no. 1,
+                                        <br>Near N.S.B. College, Sarni 
+                                        <br>Distt. Betul 460447
+                                        <br>(Madhya Pradesh)
+                                </Address>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <p>Date Of Birth</p>
+                            </div>
+                            <div class="col">
+                                <p>12 April 2001</p>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <p>E-mail</p>
+                            </div>
+                            <div class="col">
+                                <p>ajinksahu11@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <p>Mobile no.</p>
+                            </div>
+                            <div class="col">
+                                <p>+91 8770482857</p>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- <p class="card-text">.....<br>.....<br>......</p>  -->
+                    <p class="card-text" style="margin:0px"><small class="text-muted">Connect also on :</small></p>
+                    <div class="form-row connections">
+                        <div class="col">
+                            <a href="https://www.instagram.com/ajinkyasahu/" class="btn btn-link">
+                                <!-- <img href="images/insta1.png" style="width: 50px;height:50px"> -->
+                                <span style="font-size:1.18em;"><b>
+                                    <i class="bx bxl-instagram"></i>
+                                    Instagram</b></span>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="https://www.linkedin.com/in/ajinkya-sahu/" class="btn btn-link">
+                                <span style="font-size:1.18em;font:bold"><b><i class="bx bxl-linkedin"></i> LinkedIn</b></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="form-row connections">
+                        <div class="col">
+                            <a href="https://github.com/AjinkyaSahu" class="btn btn-link">
+                                <span style="font-size:1.18em;font:bold"><b><i class="bx bxl-github"></i> GitHub Profile</b></span>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="https://gitlab.com/Ajinksahu" class="btn btn-link">
+                                <span style="font-size:1.18em;font:bold"><b><i class="bx bxl-gitlab"></i> GitLab Profile</b></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 p-0 position-relative overflow-hidden shadow-lg">
+                <div class="position-lg-absolute top-0 left-0 overflow-hidden">
+                    <img class="d-block rounded-lg-3" src="{% static 'images/me1.jpeg' %}" alt="" id="me2">
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="divider">
+    </div>
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <h1 class="display- fw-bold">Technical Skills and Qualification...</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">To know more about technical skills and qualification detail You can click on the button to download my resume or to check out the works </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+            <a type="button" href="{% url 'resume:resume' %}" class="btn btn-primary btn-lg px-4 me-sm-3 mx-2">Portfolio</a>
+            <a type="button" href="#" download="{% static '' %}" class="btn btn-outline-secondary btn-lg px-4 mx-2">Download Resume</a>
+            </div>
+        </div>
+        <div class="overflow-hidden" style="max-height: 30vh;">
+            <div class="container px-5">
+            <img src="{% static 'images/resume.jpg' %}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+            </div>
+        </div>
+    </div>
+    <div class="divider">
+    </div>
+    <div class="container my-5">
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                <h1 class="display-4 fw-bold lh-1 text-center" style="font-weight:600">Contact Me</h1>
+                <p class="lead">You can always reach out to me via LinkedIn, Instagram or via mail. You can send your message by clicking on the button below.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center m-4 mb-lg-3">
+                    <a type="button" href="{% url 'contact:contact' %}#contact_form" class="btn btn-primary btn-lg  me-md-2 fw-bold px-4 m-2">Send A Mail</a>
+                    <a type="button" href="https://www.linkedin.com/in/ajinkya-sahu/" class="btn btn-outline-secondary btn-lg px-4 m-2">Message on LinkedIn</a>
+                </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1 p-0 position-relative overflow-hidden shadow-lg">
+                <div class="position-lg-absolute top-0 left-0 overflow-hidden">
+                    <img class="d-block rounded-lg-3" src="{% static 'images/me3.jpg' %}" alt="" id="me4" >
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+{% endblock body %}
+

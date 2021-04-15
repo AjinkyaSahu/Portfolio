@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block active_home_link %}
+    active
+{% endblock %}
+
+{% load static %}
+
+{% block body %}
+    <style>
+        body{
+            background-color:#e5f4f3;
+            }
+    </style>
+    <section id="aboutme" class="container border">
+        <div class="card mb-3" style="background-color:#ffffffd9;">
+            <!-- style="max-width: 540px;"> -->
+            <div class="row no-gutters">
+                <div class="col-md-4 offset-md-1 align-self-center">
+                    <img src="{% static 'images/profilepic.jpeg' %}" class="propic" class="card-img" alt="...">
+                </div>
+                <div class="col-md-7">
+                    <h1 class="text-center">About Me</h1>
+                    <div class="card-body">
+                        <p style="margin:5% 0%;">
+                            Home town is in beautiful ranges of Satpura.I am a person of <br>small town with lots of big dream.
+                        </p>
+                        <form style="margin:5% 0%;">
+                            <div class="form-row">
+                                <div class="col">
+                                    <!-- <input type="text" class="form-control" placeholder="First name"> -->
+                                    <p>Name</p>
+                                </div>
+                                <div class="col">
+                                    <!-- <input type="text" class="form-control" placeholder="Last name"> -->
+                                    <p>Ajinkya Sahu</p>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    Address
+                                </div>
+                                <div class="col">
+                                    <Address>137/k, ward no. 1,
+                                            <br>Near N.S.B. College, Sarni 
+                                            <br>Distt. Betul 460447
+                                            <br>(Madhya Pradesh)
+                                    </Address>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <p>Date Of Birth</p>
+                                </div>
+                                <div class="col">
+                                    <p>12 April 2001</p>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <p>E-mail</p>
+                                </div>
+                                <div class="col">
+                                    <p>ajinksahu11@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col">
+                                    <p>Mobile no.</p>
+                                </div>
+                                <div class="col">
+                                    <p>+91 8770482857</p>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- <p class="card-text">.....<br>.....<br>......</p>  -->
+                        <p class="card-text" style="margin:0px"><small class="text-muted">Connect also on :</small></p>
+                        <div class="form-row connections">
+                            <div class="col">
+                                <a href="" class="btn btn-link">
+                                    <!-- <img href="images/insta1.png" style="width: 50px;height:50px"> -->
+                                    <span style="font-size:1.18em;"><b>
+                                        <i class="fa fa-instagram" aria-hidden="true" ></i> 
+                                        Instagram</b></span>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a href="" class="btn btn-link">
+                                    <span style="font-size:1.18em;font:bold"><b><i class="fa fa-linkedin-square" aria-hidden="true"></i> LinkedIn</b></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="form-row connections">
+                            <div class="col">
+                                <a href="" class="btn btn-link">
+                                    <span style="font-size:1.18em;font:bold"><b><i class="fa fa-github-square" aria-hidden="true"></i> GitHub Profile</b></span>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a href="" class="btn btn-link">
+                                    <span style="font-size:1.18em;font:bold"><b><i class="fa fa-gitlab" aria-hidden="true"></i> GitLab Profile</b></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock body %}
+

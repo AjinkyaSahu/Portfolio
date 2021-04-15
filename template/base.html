@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajinkya Sahu</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+  <link href="{% static 'css/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/boxicons/css/boxicons.min.css' %}" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <!-- <script src="https://use.fontawesome.com/880a6cf86f.js"></script> -->
+  {% block styles %}{% endblock styles %}
+  <style>
+    body {
+      font-family: "Open Sans", sans-serif;
+      color: #272829;
+    }
+
+    a {
+      color: #0563bb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #067ded;
+      text-decoration: none;
+    }
+
+    .header-home {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 9997;
+      transition: all 0.5s;
+      padding: 15px;
+      overflow-y: auto;
+    }
+
+    @media (max-width: 992px) {
+      .header-home {
+        width: 300px;
+        background: #fff;
+        border-right: 1px solid #e6e9ec;
+        left: -300px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      #main {
+        margin-left: 80px;
+      }
+
+      #footer {
+        margin-left: -80px;
+      }
+    }
+
+    /*--------------------------------------------------------------
+    # Navigation Menu
+    --------------------------------------------------------------*/
+        /*
+    * Desktop Navigation 
+    */
+    .nav-menu {
+      padding: 0;
+      display: block;
+    }
+
+    .nav-menu * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-menu>ul>li {
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .nav-menu a {
+      display: flex;
+      align-items: center;
+      color: #45505b;
+      padding: 10px 18px;
+      margin-bottom: 8px;
+      transition: 0.3s;
+      font-size: 15px;
+      border-radius: 50px;
+      background: #f2f3f5;
+      height: 58px;
+      width: 100%;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .nav-menu a i {
+      font-size: 20px;
+    }
+
+    .nav-menu a span {
+      padding: 0 5px 0 7px;
+      color: #45505b;
+    }
+
+    @media (min-width: 992px) {
+      .nav-menu a {
+        width: 56px;
+      }
+
+      .nav-menu a span {
+        display: none;
+        color: #fff;
+      }
+    }
+
+    .nav-menu a:hover,
+    .nav-menu .active,
+    .nav-menu li:hover>a {
+      color: #fff;
+      background: #0563bb;
+    }
+
+    .nav-menu a:hover span,
+    .nav-menu .active span,
+    .nav-menu li:hover>a span {
+      color: #fff;
+    }
+
+    .nav-menu a:hover,
+    .nav-menu li:hover>a {
+      width: 100%;
+      color: #fff;
+    }
+
+    .nav-menu a:hover span,
+    .nav-menu li:hover>a span {
+      display: block;
+    }
+
+    /**
+* Mobile Navigation 
+*/
+    .mobile-nav-toggle {
+      position: fixed;
+      right: 10px;
+      top: 10px;
+      z-index: 9998;
+      border: 0;
+      background: none;
+      font-size: 28px;
+      transition: all 0.4s;
+      outline: none !important;
+      line-height: 0;
+      cursor: pointer;
+      border-radius: 50px;
+      padding: 5px;
+    }
+
+    .mobile-nav-toggle i {
+      color: #45505b;
+    }
+
+    .mobile-nav-active {
+      overflow: hidden;
+    }
+
+    .mobile-nav-active .header-home {
+      left: 0;
+    }
+
+    .mobile-nav-active .mobile-nav-toggle {
+      color: #fff;
+      background-color: #0563bb;
+    }
+
+    #base-container {
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      position: relative;
+    }
+
+
+    @media (min-width: 992px) {
+      #base-container {
+        padding-left: 0px;
+      }
+    }
+
+    #base-container:before {
+      background: rgba(255, 255, 255, 0.8);
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  </style>
+</head>
+
+<body style="font-family: sanserif">
+
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <header class="header-home d-flex flex-column justify-content-center rounded">
+    <nav id="navbar" class="navbar nav-menu">
+      <ul>
+        <li>
+          <a href="{% url 'home:home' %}" class="nav-link border {% block active_home_link %} {% endblock %}"><i
+              class="bx bx-home"></i> <span>Home</span></a>
+        </li>
+        <li>
+          <a href="{% url 'about:about' %}" class="nav-link border {% block active_about_link %} {% endblock %}"><i
+              class="bx bx-user"></i> <span>About</span></a>
+        </li>
+        <li>
+          <a href="{% url 'resume:resume' %}#education"
+            class="nav-link active_education_link border {% block active_education_link %} {% endblock %}"><i
+              class="bx bx-file-blank"></i> <span>Education</span></a>
+        </li>
+        <li>
+          <a href="{% url 'resume:resume' %}" class="nav-link border {% block active_resume_link %} {% endblock %}"><i
+              class="bx bx-book-content"></i> <span>Resume</span></a>
+        </li>
+        <li>
+          <a href="{% url 'blog:blog_home' %}" class="nav-link border {% block active_blog_link %} {% endblock %}"><i
+              class="bx bx-server"></i> <span>My Blogging Site</span></a>
+        </li>
+        <li>
+          <a href="{% url 'contact:contact' %}" class="nav-link border {% block active_contact_link %} {% endblock %}"><i
+              class="bx bx-envelope"></i> <span>Contact</span></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section style="min-height: 600px" id="base-container" class="mx-0">
+    {% block body %}{% endblock body %}
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="container">
+        <h3>Ajinkya Sahu</h3>
+        <p>
+          Feel free to coantact me through any of the social media platform
+          for further queries or to discuss any idea for a project.
+        </p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/ajinkya-sahu/" target="_blank" class="linkedin">
+            <i class="bx bxl-linkedin"></i>
+          </a>
+          <a href="https://www.instagram.com/ajinkyasahu/" target="_blank" class="instagram">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/ajink.sahu.3/" target="_blank" class="facebook">
+            <i class="bx bxl-facebook"></i>
+          </a>
+          <a href="https://twitter.com/sahu_ajinkya" target="_blank" class="twitter">
+            <i class="bx bxl-twitter"></i></a>
+          <a href="https://github.com/AjinkyaSahu" target="_blank" class="github">
+            <i class="bx bxl-github"></i></a>
+          <a href="https://gitlab.com/Ajinksahu" target="_blank" class="gitlab">
+            <i class="bx bxl-gitlab"></i></a>
+          {% comment %}
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          {% endcomment %}
+        </div>
+        <div class="copyright">
+          © Copyright 2021 All Rights Reserved |
+          <strong><span>Ajinkya Sahu...</span></strong>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <!-- jQuery and JS bundle w/ Popper.js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js "
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous ">
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js "
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx "
+    crossorigin="anonymous "></script>
+
+  <script>
+    document
+      .getElementsByClassName("mobile-nav-toggle")[0]
+      .addEventListener("click", function (e) {
+        document.querySelector("body").classList.toggle("mobile-nav-active");
+        this.classList.toggle("bi-list");
+        this.classList.toggle("bi-x");
+      });
+  </script>
+</body>
+
+</html>
